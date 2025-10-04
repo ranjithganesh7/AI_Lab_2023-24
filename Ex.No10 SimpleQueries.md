@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE: 06/09/2025                                                                           
-### REGISTER NUMBER : 212223060222
+### DATE: 06/09/2025                                                                         
+### REGISTER NUMBER : 21222306022255
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -21,16 +21,20 @@ Construct the FOL representation for the following sentences <br>
 5.	 Bill eats peanuts  <br> 
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
-```
-likes(steve,X):- easycourse(X).
 
-hard(science).
-easycourse(X):-dept(basketweaving,X).
-dept(basketweaving,bk301).
 ```
+likes(john,X):-food(X).
+food(apple).
+food(chicken).
+food(peanuts).
+eats(bill,X):-eats(sue,X).
+eats(bill,peanuts).
+```
+
 
 ### Output:
-![WhatsApp Image 2025-09-06 at 14 28 19_9de485a9](https://github.com/user-attachments/assets/45d18bc6-ffd1-40fc-b688-534bff04defb)
+
+<img width="920" height="69" alt="image" src="https://github.com/user-attachments/assets/9f607965-f30b-4ce7-b67f-5afdfc61d916" />
 
 
 
@@ -44,19 +48,16 @@ Convert the facts in predicate form to clauses and then prove by resolution: “
 
 ### Program:
 ```
-likes(john, X) :- food(X).                % John likes all food
-
-food(apple).
-food(chicken).
-
-% Rules
-eats(sue, X) :- eats(bill, X).            % Sue eats everything Bill eats
-eats(bill, peanut).
-
+like(steve,X):-easycourse(X).
+hard(sciencecourse).
+easycourse(X):-course(X,fundept).
+course(bk301,fundept).
 ```
-### Output:
 
-![WhatsApp Image 2025-09-06 at 14 01 43_e302474f](https://github.com/user-attachments/assets/5792d72d-b749-4c8f-bf4b-659f70e7791f)
+
+### Output:
+<img width="920" height="71" alt="image" src="https://github.com/user-attachments/assets/29f5ca87-ab48-41db-8c6a-932238ce7b31" />
+
 
 ### Task 3:
 Consider the statement <br> 
@@ -64,26 +65,19 @@ Consider the statement <br>
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
 ```
-% General rule: Crime if an American sells weapons to hostile nations
-criminal(X) :-
-    american(X),
-    weapon(Y),
-    hostile(Z),
-    sells(X, Y, Z).
-
-% Facts
+crime(X):-american(X),weapon(Y),sells(X,Y,Z),hostile(X,Z).
+hostile(X,Z):-enemy(Z,X).
+enemy(nano,west).
 american(west).
+weapon(Y):-missile(Y).
 missile(m1).
-owns(nono, m1).
-hostile(nono).
-sells(west, m1, nono).
-
-% Rule: missiles are weapons
-weapon(X) :- missile(X).
+owns(nano,m1).
+sells(west,Y,nano):-owns(nano,Y),missile(Y).
 ```
 
+
 ### Output:
-![WhatsApp Image 2025-09-06 at 14 11 21_367c42d8](https://github.com/user-attachments/assets/04823b81-7840-45e9-81e0-e1302397c407)
+<img width="924" height="84" alt="image" src="https://github.com/user-attachments/assets/53a70a29-f8b8-475a-aed1-affee561c3d4" />
 
 
 ### Result:
