@@ -144,6 +144,8 @@ plt.show()
 ```
 
 ### Output:
+![Picture1](https://github.com/user-attachments/assets/0fb702a2-7709-45c2-8042-d826f6046f7b)
+![Picture2](https://github.com/user-attachments/assets/44ba19ac-a0fa-4f2f-8a81-88fa2a7e0cfc)
 
 
 ### Result:
